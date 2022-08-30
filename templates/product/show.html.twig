@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block products %}
+    <div id="product_bloc_page">
+        <div id="product_navbar_bloc">
+            <div id="productDisplayPage">
+                <div id="zoomProductImg">
+                    <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid" id="product_img" />
+                </div>
+            </div>
+        </div>
+            <div id="productColumn">
+                <div id="productDisplay">
+                    <h4>{{ product.name }}</h4>
+                    <span id="product_subtitle">{{ product.subtitle }}</span></br>
+                    <hr>
+                    <p id="product_description">{{ product.description }}</p>
+                    <hr>
+                <div id="product_submit_page">
+                    <span id="product_price">{{ product.price|number_format(2, ',', '.') }}{{ '€' }}</span>
+                    <a href="{{ path('add_to_cart', { 'id' : product.id }) }}" class="btn btn-primary" id="product_submit">Ajouter au panier</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>    
+    <p id="product_end_space">
+    </p>
+    <footer id="fixed_footer">
+        <p>&copy; 2002–2022 Pml Boutique</br>
+            <small>La boutique des top G</br>
+                <a href="#">Privacy</a> - <a href="#">Terms</a>
+            </small>
+        </p>
+    </footer>
+{% endblock %}

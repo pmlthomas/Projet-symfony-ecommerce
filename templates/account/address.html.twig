@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes addresses{% endblock %}
+
+{% block content %}
+    <div id="address_top_text">
+        <h1>Mes addresses</h1>
+        <p>Vous pouvez gérer vos différentes adresses dans cet espace.</p>
+    </div>
+    <div id="address_buttons">
+        <a href="{{ path('app_account') }}" id="addressGoBack">Retour</a>
+        <a href="{{ path('add_address') }}" class="btn btn-primary btn-sm" id="address_add">Ajouter une addresse</a>
+    </div>
+    <hr>
+    {% if app.user.addresses|length == 0 %}
+        <p class="text-center"> 
+            Vous n'avez pas encore ajouté d'addresses dans votre compte client. Pour en ajouter une, veuillez <a href="{{ path('add_address') }}" id="address_click_here">cliquez ici</a>.
+        </p>
+    {% else %}
+        <div id="addressesDisplay">
+            <div class="row">
+                {% for address in app.user.addresses %}
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ address.name }}</h5>
+                                <p class="card-text">
+                                {{ address.address }} - 
+                                {{ address.postal }} - {{ address.city }} - {{ address.country }}
+                                </p>
+                                <a href="{{ path('edit_address', { 'id' : address.id }) }}" class="btn btn-primary">Modifier</a>
+                                <a href="{{ path('remove_address', { 'id' : address.id }) }}" class="btn btn-primary">Supprimer</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payer ma commande{% endblock %}
+
+{% block content %}
+    <div id="recap_top_bloc">
+        <h2 id="order_title">Mon récapitulatif</h2>
+        <p id="order_subtitle">Vérifiez vos informations avant de payer votre commande.</p>
+    </div>
+    <hr id="recap_hr_top">
+    <div id="order_bloc_page">
+        <div id="order_page">
+            <div id="recap_page">
+                <div id="delivery">
+                    <h2 id="recap_address_choosen">Mon addresse de livraison</h2>
+                    <div id="delivery_background">
+                        <div>
+                            {{ delivery.address }}
+                        </div>
+                        <div>
+                            {{ delivery.postal }}
+                        </div>
+                        <div>    
+                            {{ delivery.city }}
+                        </div>
+                        <div>    
+                            {{ delivery.country }}
+                        </div>
+                    </div>
+                </div>
+                <div id="recap_carrier_display">
+                    <h2 id="recap_carrier_choosen">Mon transporteur</h2>
+                    <div id="carrier_background">
+                        <div>
+                            {{ carrier.name }}
+                        </div>
+                        <div id="recap_carrier_description">
+                            {{ carrier.description }}
+                        </div>
+                        <div>
+                            {{ carrier.price }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="products_recap_bloc">
+                {% set total = null %}
+                {% for product in cart %}
+                    <div class="row" id="products_remind_row">
+                        <div id="products_remind">
+                            <div class="col-2" id="products_reminded">
+                                <img src="/uploads/{{ product.product.illustration }}" alt="{{ product.product.name }}" height="70px">
+                            </div>
+                            <div class="col-8" id="products_reminded">
+                                {{ product.product.name }}</br>
+                                <small>{{ product.product.subtitle }}</small></br>
+                                <small>x{{ product.quantity }}</small>
+                            </div>
+                            <div class="col-2" id="products_reminded">
+                                <p>{{ (product.product.price * product.quantity)|number_format(2, ',', '.') }}€</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% set total = total + (product.product.price) * (product.quantity) %}
+                {% endfor %}
+                <div id="products_recap_bottom">
+                        <div id="recap_sub_total">
+                        <p id="recap_bold">Sous-total : </p><p>{{ total|number_format(2, ',', '.') }}€</p>
+                    </div>
+                    <div id="recap_carrier">
+                        <p id="recap_bold">Livraison : <p>{{ carrier.price|number_format(2, ',', '.') }}€</p>
+                    </div>
+                    <button type="submit" class="btn-bloc btn-primary btn-sm" id="recap_submit">Payer | {{ (totalPrice + carrier.price)|number_format(2, ',', '.') }}€</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer id="end_footer">
+            <p>&copy; 2002–2022 Pml Boutique</br>
+                <small>La boutique des top G</br>
+                    <a href="#">Privacy</a> - <a href="#">Terms</a>
+                </small>
+            </p>
+        </footer>
+{% endblock %}

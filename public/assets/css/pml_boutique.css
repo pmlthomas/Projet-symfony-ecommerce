@@ -1,0 +1,668 @@
+
+/* Inscription */
+
+#inscriptionTitle
+{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -80px;
+  margin-right: 141px;
+  font-size: 1.9em;
+}
+#firstNameRow
+{
+  margin-bottom: 10px;
+  width: 400px;
+}
+#lastNameRow
+{
+  margin-bottom: 10px;
+  width: 400px;
+}
+#emailRow
+{
+  margin-bottom: 10px;
+  width: 400px;
+}
+#login_link
+{
+  color: blue;
+  text-decoration: underline;
+  margin-top: 8px;
+}
+#passwordRow
+{
+  width: 400px;
+}
+#passwordConfirmRow
+{
+  margin-bottom: 10px;
+  width: 400px;
+}
+#submitRow
+{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+#register_bloc_page
+{
+  display: flex;
+  justify-content: center;
+  margin-left: 15px;
+}
+#passwordRow
+{
+  padding-bottom: 10px;
+}
+#registerForm
+{
+  margin-top: 90px;
+}
+#register_notification
+{
+  margin-top: 90px;
+  margin-bottom: -80px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Login */
+
+#login_bloc_page
+{
+  display: flex;
+  justify-content: center;
+  margin-right: 15px;
+}
+#loginForm
+{
+  padding-top: 60px;
+  width: 350px;
+}
+#login_buttons
+{
+  display: flex;
+  justify-content: space-between;
+}
+#register_link
+{
+  color: blue;
+  text-decoration: underline;
+  margin-top: 4px;
+}
+#loginFormEmail
+{
+  padding-bottom: 10px;
+  margin-top: -5px;
+}
+#loginFormPassword
+{
+  padding-bottom: 15px;
+}
+#loginFormSubmit
+{
+  margin-bottom: 20px;
+}
+
+/* Homepage */
+
+body
+{
+  width: 1240px;
+}
+#navbarLeftText
+{
+  margin-top: 8px;
+  margin-left: 10px;
+}
+#navbarLeftText a
+{
+  color: white;
+  text-decoration: none;
+  padding-right: 10px;
+}
+a
+{
+  color: white;
+  text-decoration: none;
+}
+#homepageHome
+{
+  font-size: 1.6em;
+  margin-left: 10px;
+  padding-right: 8px;
+  margin-top: 2px;
+}
+#navbar_bloc
+{
+  background-color:rgba(0, 0, 0, 1);
+  width: 1240px;
+}
+#navbar_page
+{
+  display: flex;
+  justify-content: space-between;
+}
+#navbarLeftText a:hover
+{
+  color: aqua;
+}
+#navbarLeft
+{
+  display: flex;
+  justify-content: flex-start;
+}
+#navbarRightPage a:hover
+{
+  color: aqua;
+}
+#navbarRightPage
+{
+  display: flex;
+  margin-right: 30px;
+  margin-top: 7px;
+}
+#navbarRightBar
+{
+  color: white;
+}
+#cart_logo
+{
+  margin-top: -2px;
+}
+#navbarRightLeftText
+{
+  padding-right: 7px;
+  padding-left: 12px;
+}
+#navbarRightRightText
+{
+  padding-left: 7px;
+}
+footer a 
+{
+  color: blue;
+}
+#fixed_footer
+{
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #dfeaff;
+  margin-bottom: -9px;
+  padding-top: 6px;
+}
+#fixed_footer p
+{
+  font-size: 0.850em;
+}
+.row
+{
+  margin-left: 177px;
+}
+#bestProducts_title
+{
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+#carousel_text
+{
+  margin-bottom: -40px;
+  margin-left: 25px;
+}
+#carousel_text_background
+{
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  width: fit-content;
+}
+
+/* Account & Modification password */
+
+#account_bloc_page
+{
+  margin-left: 50px;
+  margin-top: 30px;
+}
+#modifyPwd_bloc_page
+{
+  margin-left: 50px;
+  margin-top: 60px;
+}
+#modifyPwd, #back_to_account
+{
+  color: blue;
+  text-decoration: underline;
+}
+hr
+{
+  margin-top: 17px;
+}
+#modifyPwd_h3
+{
+  margin-top: -40px;
+}
+#modifyPwd_form
+{
+  margin-top: -10px;
+}
+#account_links
+{
+  margin-top: -10px;
+}
+#modify_password_widgets
+{
+  padding-bottom: 10px;
+}
+#modify_password_widget_submit
+{
+  margin-top: 5px;
+}
+
+/* nos-produits */
+
+#productsDisplay
+{
+  width: 256px;
+  padding-right: 50px;
+  margin-right: -25px;
+}
+#products_bloc_page
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#end_footer
+{
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 90px;
+  background-color: #dfeaff;
+  margin-bottom: -9px;
+  padding-top: 6px;
+}
+#end_footer p
+{
+  font-size: 0.850em;
+}
+.container_marketing_mt5
+{
+  height: fit-content;
+}
+#product_end_space
+{
+  height: 20px;
+}
+/* product page */
+
+#productDisplayPage
+{
+  display: flex;
+  justify-content: center;
+  font-size: 0.950em;
+  margin-top: 90px;
+}
+#productColumn
+{
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-left: -60px;
+}
+#productDisplay
+{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#product_price
+{
+  margin-top: 11px;
+  padding-bottom: 10px;
+  margin-right: 10px;
+}
+#product_description
+{
+  width: 500px;
+  margin-top: -5px;
+  margin-bottom: -1px;
+}
+#product_submit_page
+{
+  display: flex;
+  justify-content: center;
+}
+#product_subtitle
+{
+  margin-bottom: -25px;
+}
+#product_bloc_page
+{
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: -30px;
+}
+#product_navbar_bloc
+{
+  display: flex;
+  justify-content: center;
+  width: 420px;
+  margin-right: -70px;
+  margin-top: -50px;
+  
+}
+#product_img
+{
+  height: 270px;
+  object-fit: contain;
+  margin: 100px;
+  margin-top: 110px;
+  margin-right: 50px;
+  margin-left: -50px;
+}
+#zoomProductImg
+{
+  margin-top: -100px;
+}
+#products_bloc_page
+{
+  display: flex;
+  flex-direction: row;
+  margin-left: 70px;
+  margin-top: 10px;
+}
+#products_search_bar
+{
+  width: 170px;
+  padding-bottom: 10px;
+}
+#products_submit
+{
+  margin-top: 10px;
+}
+#products_filter_page
+{
+  position: absolute;
+  top: 0;
+  margin-top: 130px;
+  margin-left: -200px;
+}
+#products_title
+{
+  margin-left: 140px;
+}
+
+/* Cart */
+
+
+#cart_col_img
+{
+  width: 50px;
+}
+#cart_col_name
+{
+  width: 800px;
+  font-size: 1.1em;
+}
+#cart_bottom
+{
+  display: flex;
+  justify-content: flex-end;
+}
+#cart_bottom_infos
+{
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  font-size: 0.9em;
+}
+#cart_number_products
+{
+  margin-bottom: -20px;
+}
+#cart_total
+{
+  margin-bottom: -20px;
+}
+#back_to_products
+{
+  color: blue;
+  text-decoration: underline;
+}
+#back_to_products_p
+{
+  margin-top: -10px;
+}
+#top_cart_text
+{
+  margin-left: 50px;
+  margin-top: 15px;
+}
+#empty_cart
+{
+  margin-left: 25px;
+}
+
+/* Account address */
+
+#address_title{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+#modifyAddress, #addressGoBack, #address_click_here, #order_add_address
+{
+  color: blue;
+  text-decoration: underline;
+}
+#order_add_address
+{
+  font-size: 0.9em;
+}
+#addressForm
+{
+  margin-left: -55px;
+}
+#address_form_widget
+{
+  width: 500px;
+}
+#address_form_submit
+{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 130px;
+  margin-top: -38px;
+}
+#addressGoBack
+{
+  margin-left: 40px;
+}
+#address_add
+{
+  margin-left: 20px;
+}
+#address_buttons
+{
+  margin-top: -5px;
+}
+#address_top_text
+{
+  margin-left: 40px;
+  margin-top: 5px;
+}
+
+/* Commande */
+
+#order_bloc_page
+{
+  display: flex;
+  flex-direction: column;
+}
+#order_page
+{
+  display: flex;
+  margin-top: 5px;
+  margin-left: 60px;
+  margin-right: 40px;
+}
+#order_submit
+{
+  display: flex;
+  justify-content: flex-end;
+  margin-left: -85px;
+}
+#order_title, #order_subtitle
+{
+  margin-top: 20px;
+  margin-left: 40px;
+}
+#order_subtitle
+{
+  margin-top: -2px;
+}
+.addresses_label, .carrier_label
+{
+  font-weight: bold;
+}
+#products_remind
+{
+  display: flex;
+}
+#products_reminded
+{
+  padding-bottom: 20px;
+}
+#products_remind_bloc
+{
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-right: -30px;
+  margin-top: 32px;
+}
+#products_recap_bloc
+{
+  display: flex;
+  flex-direction: column;
+  margin-left: 58px;
+  margin-right: -30px;
+  margin-top: 5px;
+}
+
+#products_remind_row
+{
+  margin: unset;
+  padding: unset;
+  width: 550px;
+}
+#products_reminded_quantity
+{
+  margin-left: -120px;
+}
+#products_remind_widget
+{
+  background-color: #f4f8ff;
+  margin-top: 10px;
+  padding: 15px;
+}
+#order_left
+{
+  width: 500px;
+  margin-right: -50px;
+}
+#products_remind_submit
+{
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+#delivery
+{
+  display: flex;
+  flex-direction: column;
+  margin-top: 3px;
+  margin-left: 70px;
+}
+#recap_page
+{
+  display: flex;
+  flex-direction: column;
+}
+#recap_carrier_display
+{
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+}
+#recap_carrier_description
+{
+  width: 350px;
+}
+#delivery_background
+{
+  background-color: #f4f8ff;
+  padding: 15px;
+  width: 260px;
+}
+#carrier_background
+{
+  background-color: #f4f8ff;
+  padding: 15px;
+}
+#recap_address_choosen
+{
+  font-size: 1em;
+  font-weight: bold;
+}
+#recap_carrier_choosen
+{
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+#recap_top_bloc
+{
+  margin-left: 90px;
+}
+#products_recap_bottom
+{
+  display: flex;
+ flex-direction: column;
+ margin-right: 60px;
+
+}
+#recap_hr_top
+{
+  width: 935px;
+  margin-left: 130px;
+}
+#recap_sub_total, #recap_total, #recap_carrier
+{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -7px;
+}
+#recap_total
+{
+  padding-bottom: 5px;
+}
+#recap_submit
+{
+  display: flex;
+  align-self: flex-end;
+  margin-top: -5px;
+  margin-bottom: 40px;
+}
+#recap_bold
+{
+  font-weight: bold;
+  margin-right: 5px;
+}

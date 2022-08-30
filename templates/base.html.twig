@@ -1,19 +1,89 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="La boutique des high value men">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>{% block title %}Pml Boutique{% endblock %}</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel-rtl/">
+
+    
+<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('assets/css/pml_boutique.css') }}">
+    
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
+  </head>
+    
+<header>
+    <div id="navbar_bloc">
+        <div id="navbar_page">
+            <div id="navbarLeft">
+                <h3 id="homepageHome"><a href="{{ path('homepage') }}">Pml Boutique</a></h3>
+                <div id="navbarLeftText">
+                    <a href="{{ path('products') }}">Nos produits</a>
+                    <a href="#">Qui sommes-nous ?</a>
+                    <a href="#">Contactez nous</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('admin') }}">Espace admin</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div id="navbarRightPage">
+                <a href="{{ path('cart') }}"><img src="/assets/images/shopping-cart.png" height="22px" id="cart_logo"></a>
+                {% if app.user %}
+                    <a href="{{ path('app_account') }}" id="navbarRightLeftText">Mon compte</a>
+                    <p id="navbarRightBar">|</p>
+                    <a href="{{ path('app_logout') }}" id="navbarRightRightText">Déconnexion</a>
+                {% else %}
+                    <a href="{{ path('app_login') }}"id="navbarRightLeftText">Connexion</a>
+                    <p id="navbarRightBar">|</p>
+                    <a href="{{ path('register') }}" id="navbarRightRightText">Inscription</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>
+  <body>
+    {% if block('carousel') is defined %}
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            {% for key, header in headers %}
+                <div class="carousel-item {% if key == 0 %}active{% endif %}" style="background: url('uploads/{{ header.illustration }}'); background-size: cover; background-position: center;"> 
+                    <div class="container">
+                        <div class="carousel-caption text-start" id="carousel_text">
+                            <div id="carousel_text_background">
+                                <h1>{{ header.title }}</h1>
+                                <p>{{ header.content }}</p>
+                                <p><a class="btn btn-lg btn-primary" href="{{ header.btnUrl }}">{{ header.btnTitle }}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    {% endif %}
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+        {% block products %}        
         {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+        {% block content %}        
+        {% endblock %}     
+
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+      
+  </body>
 </html>

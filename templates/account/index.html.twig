@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte{% endblock %}
+
+{% block content %}
+    <div id="account_bloc_page">
+        <h1>Mon compte</h1>
+        <p>Bienvenue {{ app.user.firstName|capitalize }}. Vous êtes désormais dans votre espace personnel.</p>
+        <div id="account_links">
+            <a href="{{ path('account_password') }}" id="modifyPwd">Modifier mon mot de passe</a></br>
+            <a href="{{ path('account_address') }}" id="modifyAddress">Modifier mes adresses</a>
+        </div>
+    </div>
+    <footer id="fixed_footer">
+        <p>&copy; 2002–2022 Pml Boutique</br>
+            <small>La boutique des top G</br>
+                <a href="#">Privacy</a> - <a href="#">Terms</a>
+            </small>
+        </p>
+    </footer>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos produits{% endblock %}
+
+{% block content %}
+    <div id="products_bloc_page">
+        <div id="products_filter_page">
+            <div class="row">
+                <div class="col">
+                    <div id="products_filtre">
+                        <h3>Filtre</h3>
+                        {{ form_start(form) }}
+                            <div id="products_search_bar">
+                                {{ form_row(form.string) }}
+                            </div>
+                            {{ form_row(form.categories) }}
+                            <div id="products_submit">
+                                {{ form_row(form.submit) }}
+                            </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>      
+            </div>
+        </div>
+        <div class="container text-center">
+            <h1 id="products_title">Nos produits</h1>
+            <div id="productsDisplayPage">
+                <div class="row g-2">
+                    {% for product in products %}
+                        <div class="col-6" id="productsDisplay">
+                            <a href="{{ path('product', { 'slug' : product.slug }) }}"><img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid" /></a>
+                            <h4>{{ product.name }}</h4>
+                            <span>{{ product.subtitle }}</span></br>
+                            <span>{{ product.price|number_format(2, ',', '.') }}{{ '€' }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <p id="product_end_space">
+    </p>
+    <footer id="end_footer">
+        <p>&copy; 2002–2022 Pml Boutique</br>
+            <small>La boutique des top G</br>
+                <a href="#">Privacy</a> - <a href="#">Terms</a>
+            </small>
+        </p>
+    </footer>
+{% endblock %}

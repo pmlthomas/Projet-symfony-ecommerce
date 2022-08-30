@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valider ma commande{% endblock %}
+
+{% block content %}
+    <h2 id="order_title">Je passe ma commande</h2>
+    <p id="order_subtitle">Choisissez vos préférences avant de passer votre commande.</p>
+    <hr>
+    <div id="order_bloc_page">
+        <div id="order_page">
+            {% set formHtml %}
+                <div id="order_left">
+                    {{ form_start(form, {'action': path('order_recap')}) }}
+                        {{ form_label(form.addresses, 'Choisir mon addresse de livraison', 
+                            {
+                                'label_attr': {'class': 'addresses_label'}
+                            }) 
+                        }}
+                        <a href="{{ path('add_address') }}" id="order_add_address">Ajouter une nouvelle addresse</a>
+                        <div id="products_remind_widget">
+                            {{ form_widget(form.addresses) }}
+                        </div>
+                    {{ form_label(form.carrier, 'Choisir mon transporteur', 
+                            {
+                                'label_attr': {'class': 'carrier_label'}
+                            }) 
+                        }}
+                        <div id="products_remind_widget">
+                            {{ form_widget(form.carrier) }}
+                        </div>
+                        <div id="products_remind_submit">
+                            {{ form_row(form.submit) }}
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            {% endset %}
+            {{ formHtml|replace({'[br]' : '</br>'})|raw }}
+            <div id="products_remind_bloc">
+                {% for product in cart %}
+                    <div class="row" id="products_remind_row">
+                        <div id="products_remind">
+                            <div class="col-2" id="products_reminded">
+                                <img src="/uploads/{{ product.product.illustration }}" alt="{{ product.product.name }}" height="70px">
+                            </div>
+                            <div class="col-8" id="products_reminded">
+                                {{ product.product.name }}</br>
+                                <small>{{ product.product.subtitle }}</small>
+                            </div>
+                            <div class="col-2" id="products_reminded_quantity">
+                                x{{ product.quantity }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <footer id="end_footer">
+        <p>&copy; 2002–2022 Pml Boutique</br>
+            <small>La boutique des top G</br>
+                <a href="#">Privacy</a> - <a href="#">Terms</a>
+            </small>
+        </p>
+    </footer>
+{% endblock %}

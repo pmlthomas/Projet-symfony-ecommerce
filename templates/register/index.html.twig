@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1 id="inscriptionTitle">Créer son compte</h1>
+        {% if notification %}
+            <div class="alert alert-info" id="register_notification">
+                {{ notification }}
+            </div>
+        {% endif %}
+    <div id="register_bloc_page">
+
+        {{ form_start(form) }}
+
+            <div id="registerForm">
+                <div id="firstNameRow">
+                    {{ form_row(form.firstName) }}
+                </div>
+                <div id="lastNameRow">
+                    {{ form_row(form.lastName) }}
+                </div>
+                <div id="emailRow">
+                    {{ form_row(form.email) }}
+                </div>    
+                <div id="passwordRow">
+                    {{ form_row(form.password.first) }}
+                </div>
+                <div id="passwordRow">
+                    {{ form_row(form.password.second) }}
+                </div>                  
+                <div id="submitRow">
+                    {{ form_row(form.submit) }}
+                    <a href="{{ path('app_login') }}" id="login_link">Se connecter</a>
+                </div> 
+            </div>
+        {{ form_end(form) }}
+    </div>
+        <footer id="end_footer">
+            <p>&copy; 2002–2022 Pml Boutique</br>
+                <small>La boutique des top G</br>
+                    <a href="#">Privacy</a> - <a href="#">Terms</a>
+                </small>
+            </p>
+        </footer>
+{% endblock %}
